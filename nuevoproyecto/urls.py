@@ -16,7 +16,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from store.views import Hola #forma de llamar la funcion que tenemos en la aplicacion
+from store import views # segunda forma de llamar la funcion de nuestra aplicacion
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path('admin/', admin.site.urls), #path("admin/":'como se debe llamar en la url para que se pueda ver', "admin.site.urls":la ruta donde debe buscar django para mostrar si el usuario busco por esa url)
+    path('', Hola), #forma 1
+    path('estado/', views.estado) #forma 2
 ]

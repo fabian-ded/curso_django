@@ -1,0 +1,24 @@
+COMANDOS DE DJANGO EN EL POWERSHELL
+
+pip install virtualenv : Este comando utiliza pip (el gestor de paquetes de Python) para instalar el paquete virtualenv. virtualenv es una herramienta para crear entornos virtuales
+aislados de Python, Esto es súper útil para que cada proyecto tenga sus propias dependencias sin que interfieran con otros proyectos o con las librerías globales de tu sistema.
+
+virtualenv venv :  Una vez instalado "virtualenv", este comando crea un nuevo entorno virtual llamado venv en el directorio actual.
+Dentro de esta carpeta venv se instalarán Python y las librerías específicas para el proyecto que se estara trabajando.
+
+pip install django : Este comando instala el framework Django. Si tienes un entorno virtual activado (como venv),
+Django se instalará dentro de ese entorno, lo cual es la práctica recomendada.
+
+django-admin startproject nuevoproyecto . : "django-admin" es la utilidad de línea de comandos de Django para tareas administrativas.
+"startproject" es la acción para crear un nuevo proyecto.
+"nuevoproyecto" es el nombre que le das al proyecto El "."" al final indica que el proyecto se debe crear en el directorio actual, evitando una carpeta contenedora
+extra con el mismo nombre del proyecto.
+
+python manage.py runserver : Este comando inicia el servidor de desarrollo ligero de Django, permite ver la aplicación web en tu navegador local
+(usualmente en http://127.0.0.1:8000/) mientras estás desarrollando. No es para producción, ademas se puede correr en otra url distinta asi = "python manage.py runserver 3000"
+y este seria el nuevo puerto
+
+.\venv\Scripts\activate : Este comando activa el entorno virtual venv que se creo previamente (la ruta es específica para Windows y PowerShell).
+Una vez activado, cualquier paquete que se instale con "pip" se instalará dentro de "venv", y cuando se ejecute Python, usara la versión y paquetes de ese entorno.
+
+python manage.py startapp store: esto es para crear una aplicacion dentro del proyecto
