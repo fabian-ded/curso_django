@@ -23,6 +23,6 @@ Una vez activado, cualquier paquete que se instale con "pip" se instalará dentr
 
 python manage.py startapp store: esto es para crear una aplicacion dentro del proyecto
 
-python manage.py makemigrations: este comando sirve para  
+python manage.py makemigrations: "makemigrations" analiza los modelos de las aplicaciones y los compara con el estado actual de las migraciones (archivos que describen los cambios en la base de datos), Si detecta diferencias (nuevos modelos, campos añadidos/eliminados/modificados en modelos existentes), crea nuevos archivos de migración.
 
-python manage.py migrate: 
+python manage.py migrate: Este comando aplica los cambios a la base de datos, ademas toma los archivos de migración que fueron creados por makemigrations (o los que vienen por defecto con Django y otras aplicaciones de terceros) y ejecuta las instrucciones SQL necesarias para actualizar la estructura de tu base de datos, esto puede significar crear nuevas tablas, alterar las existentes, añadir índices, etc.
