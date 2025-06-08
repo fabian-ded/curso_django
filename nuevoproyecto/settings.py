@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'store' #aqui se coloca la aplicacion para que el proyecto lo pueda reconocer y ademas conocer las clases que tenga este
 ]
 
 MIDDLEWARE = [

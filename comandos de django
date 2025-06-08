@@ -22,3 +22,7 @@ y este seria el nuevo puerto
 Una vez activado, cualquier paquete que se instale con "pip" se instalará dentro de "venv", y cuando se ejecute Python, usara la versión y paquetes de ese entorno.
 
 python manage.py startapp store: esto es para crear una aplicacion dentro del proyecto
+
+python manage.py makemigrations: este comando sirve para  
+
+python manage.py migrate: 
