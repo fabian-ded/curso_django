@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse, JsonResponse
 from .models import Project, Task
-from django.shortcuts import get_object_or_404
+from django.shortcuts import get_object_or_404 #esta importacion de libreria es para que nos muestre un error 404 si es que lo hay
 
 # Create your views here.
 def Hola(request, username):#aqui el username es el dato que debe reciir para funcionar esta funcion
