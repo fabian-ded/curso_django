@@ -7,5 +7,5 @@ urlpatterns = [
     path('estado/', views.estado),
     path('Hola/<str:username>', views.Hola),#ese "<str:username>" funciona para esperar un parametro que nos de el usuario y al recibirlo mostrar el contenido que se debe enviar
     path('projects/', views.projects),
-    path('tasks/<int:id>', views.tasks),
+    path('tasks/', views.tasks),
 ]
