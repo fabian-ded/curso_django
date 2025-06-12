@@ -25,4 +25,5 @@ def projects(request):
 def tasks(request):#se recibe un id mediante la url que es recibido como un parametro en esta funcion
     #task = Task.objects.get(id=id)#se hace la consulta en la base de datos
     #task =get_object_or_404(Task, id=id)
-    return render(request, 'task.html')
+    tasks = Task.objects.all()
+    return render(request, 'task.html', {'tasks': tasks})

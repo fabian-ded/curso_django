@@ -1,1 +1,12 @@
 <h1>Tasks</h1>
+
+{% for task in tasks %}<!-- asi se hace un bucle en un html y usando django -->
+    <div>
+        <h2>{{task.title}}</h2><!--asi se trae un dato que venga del bucle-->
+        <p>{{task.description}}</p>
+        <p>proyecto: {{task.Project.name}}</p>
+        <button>
+            delete
+        </button>
+    </div>
+{% endfor %}<!-- asi se cierra el bucle -->

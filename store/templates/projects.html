@@ -1,3 +1,7 @@
 <h1>Projects</h1>
 
-<p> {{projects}} </p>
+{% for project in projects %} <!-- asi se hace un bucle en un html y usando django -->
+    <article>
+        <h1>{{project.name}}</h1> <!--asi se trae un dato que venga del bucle-->
+    </article>
+{% endfor %} <!-- asi se cierra el bucle -->
