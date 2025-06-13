@@ -26,4 +26,4 @@ def tasks(request):#se recibe un id mediante la url que es recibido como un para
     #task = Task.objects.get(id=id)#se hace la consulta en la base de datos
     #task =get_object_or_404(Task, id=id)
     tasks = Task.objects.all()
-    return render(request, 'task.html', {'tasks': tasks})
+    return render(request, 'task.html', {'taske': tasks})

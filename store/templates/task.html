@@ -1,10 +1,12 @@
-<h1>Tasks</h1>
+{% extends 'layouts/base.html' %}<!--aqui es para importar se podria decir el html de base.html-->
+{% block content%}
 
-{% for task in tasks %}<!-- asi se hace un bucle en un html y usando django -->
+<h1>Tasks</h1>
+{% for task in taske %}<!-- asi se hace un bucle en un html y usando django -->
     <div>
         <h2>{%if task.done == False%} ⏲ {%else%} ✅ {%endif%}  {{task.title}}</h2><!--asi se trae un dato que venga del bucle-->
-        
-        {%if task.done == False%} <!-- siempre para hacer codigo dentro de un html en un proyecto django se utiliza ( {%%} ) y colocando el ( {%end%} ), pero en realidad lo que se estoy utilizando se llama jija2 que es un motor de plantillas que me deja realizar codigo aqui -->
+         
+        {%if task.done == False%}{#<!-- siempre para hacer codigo dentro de un html en un proyecto django se utiliza ( {%algo%} ) y colocando el ( {%end%} ), pero en realidad lo que se estoy utilizando se llama jija2 que es un motor de plantillas que me deja realizar codigo aqui --> #}
         <p>Tarea Realizada</p>
         {%else%}
         <p>Tarea Pendiente</p>
@@ -19,3 +21,5 @@
         </button>
     </div>
 {% endfor %}<!-- asi se cierra el bucle -->
+
+{% endblock %}
