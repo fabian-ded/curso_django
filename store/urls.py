@@ -8,4 +8,5 @@ urlpatterns = [
     path('Hola/<str:username>', views.Hola),#ese "<str:username>" funciona para esperar un parametro que nos de el usuario y al recibirlo mostrar el contenido que se debe enviar
     path('projects/', views.projects),
     path('tasks/', views.tasks),
+    path('create_task/', views.Create_task)
 ]

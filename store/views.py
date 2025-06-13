@@ -1,7 +1,8 @@
-from django.shortcuts import render #render se utiliza para mostrar que diferentes htmls que tenemos en nuestro template y que se puedan utilizar aqui
+from django.shortcuts import render, redirect #render se utiliza para mostrar que diferentes htmls que tenemos en nuestro template y que se puedan utilizar aqui, ademas el "redirect" se utiliza para colocar direcciones en la url para irnos a otro lugar o otro html
 from django.http import HttpResponse, JsonResponse
 from .models import Project, Task
 from django.shortcuts import get_object_or_404 #esta importacion de libreria es para que nos muestre un error 404 si es que lo hay
+from .forms import CreateNewTask
 
 # Create your views here.
 def Hola(request, username):#aqui el username es el dato que debe reciir para funcionar esta funcion
@@ -27,3 +28,14 @@ def tasks(request):#se recibe un id mediante la url que es recibido como un para
     #task =get_object_or_404(Task, id=id)
     tasks = Task.objects.all()
     return render(request, 'task.html', {'taske': tasks})
+
+def Create_task(request):
+    #print(request.GET['title'])#para buscar la informacion recibida
+    if request.method == 'GET':#aqui estamos diciendo que si nos estan visitando del metodo "get" no renderice el html normal que tenemos de interface
+        return render(request, "create_task.html", {
+        "form": CreateNewTask()
+    })
+    else: #pero aqui estamos diciendo que si nos estan visitando de otro metodo pues se ejecuta esta linea, para que se incerten esos datos a la base de datos si nos estan visitando con el metodo "POST"
+        Task.objects.create(
+            title=request.POST['title'],description=request.POST['description'],Project_id=request.POST['id_project'])
+        return redirect("/tasks/")

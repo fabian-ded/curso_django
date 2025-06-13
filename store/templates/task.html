@@ -5,11 +5,11 @@
 {% for task in taske %}<!-- asi se hace un bucle en un html y usando django -->
     <div>
         <h2>{%if task.done == False%} ⏲ {%else%} ✅ {%endif%}  {{task.title}}</h2><!--asi se trae un dato que venga del bucle-->
-         
-        {%if task.done == False%}{#<!-- siempre para hacer codigo dentro de un html en un proyecto django se utiliza ( {%algo%} ) y colocando el ( {%end%} ), pero en realidad lo que se estoy utilizando se llama jija2 que es un motor de plantillas que me deja realizar codigo aqui --> #}
-        <p>Tarea Realizada</p>
-        {%else%}
+         {#<!-- siempre para hacer codigo dentro de un html en un proyecto django se utiliza ( {%algo%} ) y colocando el ( {%end%} ), pero en realidad lo que se estoy utilizando se llama jija2 que es un motor de plantillas que me deja realizar codigo aqui --> #}
+        {%if task.done == False%}
         <p>Tarea Pendiente</p>
+        {%else%}
+        <p>Tarea Realizada</p>
         {%endif%}
         <p>{{task.description}}</p>
         <p>proyecto: {{task.Project.name}}</p>
