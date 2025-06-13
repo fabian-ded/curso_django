@@ -37,5 +37,5 @@ def Create_task(request):
     })
     else: #pero aqui estamos diciendo que si nos estan visitando de otro metodo pues se ejecuta esta linea, para que se incerten esos datos a la base de datos si nos estan visitando con el metodo "POST"
         Task.objects.create(
-            title=request.POST['title'],description=request.POST['description'],Project_id=request.POST['id_project'])
+            title=request.POST['title'],description=request.POST['description'],Project_id=request.POST['id_project'])#apunte importante si no funciona la relacion que tenemos en el model que tenemos como base de datos, sirve tambien rebizar directamente la base de datos creada que tenemos con esos modelos porque tal vez hay veces que django nombra o agrega mas caracteres a nuestras columnas de la base de datos y como el model lo tenemos tal cual al momento de ejecutar algo para guardar puede salir error entonces es importante tambien mirar la base de datos.
         return redirect("/tasks/")
