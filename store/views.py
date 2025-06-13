@@ -33,7 +33,7 @@ def Create_task(request):
     #print(request.GET['title'])#para buscar la informacion recibida
     if request.method == 'GET':#aqui estamos diciendo que si nos estan visitando del metodo "get" no renderice el html normal que tenemos de interface
         return render(request, "create_task.html", {
-        "form": CreateNewTask()
+        "form": CreateNewTask() #llamamos la funcion que creamos para hacer una plantilla de imput para los html
     })
     else: #pero aqui estamos diciendo que si nos estan visitando de otro metodo pues se ejecuta esta linea, para que se incerten esos datos a la base de datos si nos estan visitando con el metodo "POST"
         Task.objects.create(

@@ -4,8 +4,8 @@
 <h1>Create a new task</h1>
 
 <form method="POST">
-    {% csrf_token %}
-    {{form.as_p}}
+    {% csrf_token %} <!-- aveces si nos sale un error de token hay que agregar esta linea para impedir ese error -->
+    {{form.as_p}} <!-- agregando ese as_p  estamos diciendo que nos de un espacio por cada campo creado-->
     <button>
         save
     </button>
