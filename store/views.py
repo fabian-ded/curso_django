@@ -38,15 +38,14 @@ def Create_task(request):
     else: #pero aqui estamos diciendo que si nos estan visitando de otro metodo pues se ejecuta esta linea, para que se incerten esos datos a la base de datos si nos estan visitando con el metodo "POST"
         Task.objects.create(
             title=request.POST['title'],description=request.POST['description'],Project_id=request.POST['id_project'])#apunte importante si no funciona la relacion que tenemos en el model que tenemos como base de datos, sirve tambien rebizar directamente la base de datos creada que tenemos con esos modelos porque tal vez hay veces que django nombra o agrega mas caracteres a nuestras columnas de la base de datos y como el model lo tenemos tal cual al momento de ejecutar algo para guardar puede salir error entonces es importante tambien mirar la base de datos.
-        return redirect("/tasks/")
+        return redirect("tasks") #ejemplo1
 
 def Create_Project(request):
     if request.method == 'GET':
         return render (request, "projects/create_project.html", {"forms": CreateNewProject() })
     else:
-        print(request.POST)
-        project = Project.objects.create(name=request.POST["name"])
-        print(project)
+        print(request.POST) #para ver que esta enviando el usuario al metodo post
+        Project.objects.create(name=request.POST["name"])
         #return render (request, "projects/create_project.html", {"forms": CreateNewProject() })
-        return redirect("/projects/")
+        return redirect("projects")#ejemplo 2
         
