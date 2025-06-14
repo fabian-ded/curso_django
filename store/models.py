@@ -17,6 +17,6 @@ class Task(models.Model):
     
     
     def __str__(self):
-        return self.title + ' - ' + self.Project.name #aqui se retorna el titulo y ademas se úede mostrar el nombre del proyecto de la otra tabla que esta relaccionada
+        return self.title + ' - ' + self.Project.name #aqui se retorna el titulo y ademas se puede mostrar el nombre del proyecto de la otra tabla que esta relaccionada
     
     

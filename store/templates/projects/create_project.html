@@ -1,0 +1,14 @@
+{% extends "layouts/base.html" %}
+{%block content%}
+
+    <h1>Crea tu Proyecto como quieras nada es incorrecto hasta que lo mejoras </h1>
+
+    <form method="POST">
+        {%csrf_token%}
+        {{forms.as_p}}
+        <button>
+            save
+        </button>
+    </form>
+    
+{% endblock %}
