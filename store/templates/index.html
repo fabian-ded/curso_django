@@ -1,7 +1,11 @@
 {% extends "layouts/base.html" %} <!--aqui es para importar se podria decir el html de base.html-->
+{% load static %} <!-- aqui estamos diciendo que vamos a estar utilizando archivos estaticos que vengan de la carpeta 'static' -->
+
 {% block content %}
 
 <h1>Bienvenido a mi app {{title}} </h1> <!-- el "{{title}} es la informacion que se esta extrayendo de views en la funcion de index y con esto se puede mostrar" -->
 <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minima itaque laborum labore et corporis commodi officiis quisquam quis eaque quaerat necessitatibus ut tempore modi, quibusdam qui sed aliquam sit perferendis?</p>
+
+<img src="{% static 'pato_lucas.jpg' %}" alt="", width="300"> <!-- aqui se coloca la imagen que queremos utilizar que venga de la carpeta static -->
 
 {% endblock %}

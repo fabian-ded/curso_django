@@ -1,4 +1,15 @@
-<nav>
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyecto Django</title>
+    <link rel="stylesheet" href="{% static '/styles/main.css' %}"> <!-- asi se coloca un css en el html-->
+</head>
+<body>
+    <nav>
     <ul>
         <li>
             <a href="/">Home</a>
@@ -23,3 +34,5 @@
 
 {% block content %} <!-- este block basio significa que aqui ira el contenido que se tenga en cada html diferente que vayamos  -->
 {% endblock %}
+</body>
+</html>
