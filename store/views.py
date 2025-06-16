@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect #render se utiliza para mostrar que diferentes htmls que tenemos en nuestro template y que se puedan utilizar aqui, ademas el "redirect" se utiliza para colocar direcciones en la url para irnos a otro lugar o otro html
+from django.shortcuts import render, redirect, get_object_or_404 #render se utiliza para mostrar que diferentes htmls que tenemos en nuestro template y que se puedan utilizar aqui, ademas el "redirect" se utiliza para colocar direcciones en la url para irnos a otro lugar o otro html
 from django.http import HttpResponse, JsonResponse
 from .models import Project, Task
 from django.shortcuts import get_object_or_404 #esta importacion de libreria es para que nos muestre un error 404 si es que lo hay
@@ -49,3 +49,7 @@ def Create_Project(request):
         #return render (request, "projects/create_project.html", {"forms": CreateNewProject() })
         return redirect("projects")#ejemplo 2
         
+def Projec_detail(request, id):
+    proyecto = get_object_or_404(Project ,id=id)
+    tasks = Task.objects.filter(Project_id=id)
+    return render(request, 'projects/detail.html', {'project': proyecto, 'tasks': tasks })

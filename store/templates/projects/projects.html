@@ -4,8 +4,10 @@
 <h1>Projects</h1>
 
 {% for project in projects %} <!-- asi se hace un bucle en un html y usando django -->
-    <article>
+    <article class="card">
+        <a href="{% url 'project_detail' project.id %}">
         <h1>{{project.name}}</h1> <!--asi se trae un dato que venga del bucle-->
+        </a>
     </article>
 {% endfor %} <!-- asi se cierra el bucle -->
 

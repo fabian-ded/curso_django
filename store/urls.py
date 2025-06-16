@@ -9,5 +9,6 @@ urlpatterns = [
     path('projects/', views.projects, name='projects'),# al colocar el "name=projects" estamos diciendo que ahora con solo el name podemos utilizar esta url donde se necesite con tan solo el name 
     path('tasks/', views.tasks, name='tasks'),#ademas el "name" ayuda por si llego en algun momento a cambiar la url pues con solo el name no pasa nada asi se cambie el nombre de la ruta que tenga o cambie
     path('create_task/', views.Create_task, name='create_task'),#el name es como un identificador para esta ruta
-    path('create_project/', views.Create_Project, name='create_project')
+    path('create_project/', views.Create_Project, name='create_project'),
+    path('projects/<int:id>', views.Projec_detail, name="project_detail")
 ]

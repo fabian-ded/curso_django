@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="{% static '/styles/main.css' %}"> <!-- asi se coloca un css en el html-->
 </head>
 <body>
-    <nav>
+    <nav class="navbar container">
     <ul>
         <li>
             <a href="/">Home</a>
@@ -32,7 +32,10 @@
     </ul>
 </nav>
 
+<main class="container">
 {% block content %} <!-- este block basio significa que aqui ira el contenido que se tenga en cada html diferente que vayamos  -->
 {% endblock %}
+</main>
+
 </body>
 </html>

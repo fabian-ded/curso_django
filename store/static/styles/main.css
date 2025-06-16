@@ -2,3 +2,45 @@ body{
     background: #202020;
     color: rgb(200, 255, 255);
 }
+
+.navbar{
+    background: #404040;
+    padding: 25px ;
+}
+
+.navbar ul{
+    display: flex;
+    justify-content: space-between;
+}
+
+.navbar ul li{
+    list-style: none;
+}
+
+.navbar ul li a{
+    color: blanchedalmond;
+    text-decoration: none;
+} 
+
+.navbar ul li a:hover{
+    color: rgb(200, 255, 255);
+}
+
+.container{
+    max-width:  1900px;
+    margin: auto;
+    padding: 20px 0;
+}
+
+.card{
+    background: whitesmoke;
+    color: black;
+    padding: 20px 0;
+    margin-bottom: 2px;
+}
+
+.inputt{
+    background: #d42121;
+    padding: 10px;
+    text-align: center;
+}
